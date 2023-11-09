@@ -49,7 +49,9 @@ packages:
 # extra-package-dbs: []
 
 # Control whether we use the GHC we find on the path
-# system-ghc: true
+system-ghc: true
+install-ghc: false
+skip-ghc-check: true
 #
 # Require a specific version of Stack, using version ranges
 # require-stack-version: -any # Default
