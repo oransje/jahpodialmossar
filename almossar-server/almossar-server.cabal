@@ -27,6 +27,7 @@ library
   exposed-modules:
       Constants
       Handlers
+      Routes
   other-modules:
       Paths_almossar_server
   autogen-modules:
