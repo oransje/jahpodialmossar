@@ -27,6 +27,7 @@ library
   exposed-modules:
       Constants
       Handlers
+      Message
       Routes
   other-modules:
       Paths_almossar_server
@@ -36,8 +37,11 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , http-types
+    , text
+    , time
     , wai
     , warp
   default-language: Haskell2010
@@ -52,9 +56,12 @@ executable almossar-server-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      almossar-server
+      aeson
+    , almossar-server
     , base >=4.7 && <5
     , http-types
+    , text
+    , time
     , wai
     , warp
   default-language: Haskell2010
@@ -63,6 +70,7 @@ test-suite almossar-server-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      MessageSpec
       Paths_almossar_server
   autogen-modules:
       Paths_almossar_server
@@ -70,9 +78,13 @@ test-suite almossar-server-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      almossar-server
+      aeson
+    , almossar-server
     , base >=4.7 && <5
+    , hspec
     , http-types
+    , text
+    , time
     , wai
     , warp
   default-language: Haskell2010

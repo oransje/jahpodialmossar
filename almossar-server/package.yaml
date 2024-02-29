@@ -24,6 +24,9 @@ dependencies:
 - wai
 - warp
 - http-types
+- aeson
+- time
+- text
 
 ghc-options:
 - -Wall
@@ -59,4 +62,7 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - time
+    - text
+    - hspec
     - almossar-server
