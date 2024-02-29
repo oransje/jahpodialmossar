@@ -68,9 +68,10 @@ executable almossar-server-exe
 
 test-suite almossar-server-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Main.hs
   other-modules:
       MessageSpec
+      Spec
       Paths_almossar_server
   autogen-modules:
       Paths_almossar_server
