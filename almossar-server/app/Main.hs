@@ -5,5 +5,5 @@ import Routes
         
 main :: IO ()
 main = do
-    putStrLn $ "Running almossar at https://localhost:" ++ show port
+    putStrLn $ "Running almossar at http://localhost:" ++ show port
     run port appRoutes
