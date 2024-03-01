@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 import Network.Wai.Handler.Warp (run)
-import Constants
+import Constants (port)
 import Routes
         
 main :: IO ()
