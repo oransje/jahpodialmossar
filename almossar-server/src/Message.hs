@@ -1,31 +1,53 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Message 
-    (Message(..)
-     , randomMessage
-    ) where
+module Message (Message(..), generateAlmossoMessage, notFoundMessage) where
 
 import System.Random (randomRIO)
-import System.IO.Unsafe (unsafePerformIO)
 import Data.Aeson (object, (.=), ToJSON(..))
 import qualified Data.Text as T
 import Data.Time
 
+import Constants (positiveMessages, negativeMessages, lowerTime, upperTime)
+
+-- Datatype definitions
+
 data Message = Message {
     message :: T.Text,
-    timestamp :: UTCTime
+    time :: LocalTime
 }
 
 instance ToJSON Message where
     toJSON (Message m t) =  
         object 
             ["message" .= m
-            , "timestamp" .= t
+            , "time" .= t
             ]
 
-randomMessageImpure :: [String] -> IO String 
-randomMessageImpure messages = do
+-- Impure IO code
+
+randomMessage :: [String] -> IO String 
+randomMessage messages = do
     index <- randomRIO (0, length messages - 1)
     return (messages !! index)
 
-randomMessage :: [String] -> String
-randomMessage messages = unsafePerformIO $ randomMessageImpure messages
+generateAlmossoMessage :: IO Message
+generateAlmossoMessage = do
+    t <- getCurrentTime
+    tz <- getCurrentTimeZone
+
+    let currentTimeLocal = utcToLocalTime tz t
+    let currentTime = localTimeOfDay currentTimeLocal 
+
+    if currentTime >= lowerTime && currentTime <= upperTime then do
+        messageStr <- randomMessage positiveMessages
+        return $ Message (T.pack messageStr) currentTimeLocal
+    else do
+        messageStr <- randomMessage negativeMessages
+        return $ Message (T.pack messageStr) currentTimeLocal
+
+
+notFoundMessage :: IO Message
+notFoundMessage = do
+    t <- getCurrentTime
+    tz <- getCurrentTimeZone
+
+    return $ Message "Resource not found" (utcToLocalTime tz t)
