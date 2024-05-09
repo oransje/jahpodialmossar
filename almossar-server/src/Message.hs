@@ -1,19 +1,17 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Message 
     (Message(..)
+     , randomMessage
     ) where
 
+import System.Random (randomRIO)
+import System.IO.Unsafe (unsafePerformIO)
 import Data.Aeson (object, (.=), ToJSON(..))
-import Data.Text
+import qualified Data.Text as T
 import Data.Time
-import Data.Word (Word8)
-import System.Random (RandomRIO)
-
-import Constants (positiveMessages)
-import Data.Binary (Word8)
 
 data Message = Message {
-    message :: Text,
+    message :: T.Text,
     timestamp :: UTCTime
 }
 
@@ -24,6 +22,10 @@ instance ToJSON Message where
             , "timestamp" .= t
             ]
 
-upperLimit :: Word8
-upperLimit = flip (-) 1 . length
+randomMessageImpure :: [String] -> IO String 
+randomMessageImpure messages = do
+    index <- randomRIO (0, length messages - 1)
+    return (messages !! index)
 
+randomMessage :: [String] -> String
+randomMessage messages = unsafePerformIO $ randomMessageImpure messages

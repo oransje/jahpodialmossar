@@ -40,6 +40,7 @@ library
       aeson
     , base >=4.7 && <5
     , http-types
+    , random
     , text
     , time
     , wai
@@ -60,6 +61,7 @@ executable almossar-server-exe
     , almossar-server
     , base >=4.7 && <5
     , http-types
+    , random
     , text
     , time
     , wai
@@ -84,6 +86,7 @@ test-suite almossar-server-test
     , base >=4.7 && <5
     , hspec
     , http-types
+    , random
     , text
     , time
     , wai

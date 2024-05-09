@@ -27,6 +27,7 @@ dependencies:
 - aeson
 - time
 - text
+- random
 
 ghc-options:
 - -Wall
