@@ -1,3 +1,4 @@
-# almossar-server
+# jahpodialmossar
 
-The server package of the almossar project
+[x] - Backend
+[ ] - Frontend
