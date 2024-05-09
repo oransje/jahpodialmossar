@@ -4,7 +4,6 @@ module Constants
       , negativeMessages
       , lowerTime
       , upperTime
-      , timeZona
     ) where
 
 import System.IO.Unsafe (unsafePerformIO)
@@ -25,6 +24,3 @@ lowerTime = TimeOfDay 11 0 0
 
 upperTime :: TimeOfDay 
 upperTime = TimeOfDay 14 0 0
-
-timeZona :: TimeZone
-timeZona = unsafePerformIO getCurrentTimeZone
