@@ -1,3 +1,3 @@
-# jahpodialmossar
+# almossar-server
 
-Meia noite eu te conto ;*
+The server package of the almossar project
