@@ -14,8 +14,7 @@ Execute o seguinte comando a partir da raiz deste projeto:
 ```bash
 elm make src/Main.elm --output=elm.js
 ```
-
-Then open `index.html` in your browser!
+Após a execução do comando, abra o arquivo `index.html` em seu navegador.
 
 Isso irá compilar o código Elm em JavaScript e criar um arquivo `elm.js` que é referenciado por `index.html`.
 
