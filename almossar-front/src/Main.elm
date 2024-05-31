@@ -95,7 +95,7 @@ type alias ApiData =
 getData : Cmd Msg
 getData =
     Http.get
-        { url = "http://localhost:8080/api"
+        { url = "http://localhost:8080/"
         , expect = Http.expectJson GotData apiDataDecoder
         }
 
