@@ -2,4 +2,4 @@
 
 [x] - Backend
 
-[ ] - Frontend
+[x] - Frontend
