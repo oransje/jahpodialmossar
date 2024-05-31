@@ -1,0 +1,91 @@
+html,
+body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #fafa24;
+}
+
+.todomvc-wrapper {
+    visibility: visible !important;
+}
+
+h1 {
+    font-size: 3.75rem;
+    /* Este é o equivalente de text-5xl no Tailwind CSS */
+    font-family: monospace;
+    /* Este é o equivalente de font-mono no Tailwind CSS */
+}
+
+
+h2 {
+    font-size: 5rem;
+    /* This is the equivalent of text-7xl */
+    font-weight: bold;
+    max-width: 64rem;
+}
+
+.container {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+span {
+    font-size: 1.25rem;
+    /* Equivalente a text-2xl */
+    cursor: pointer;
+}
+
+
+/* CSS */
+button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: JetBrains Mono,monospace;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+button:hover,
+button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
