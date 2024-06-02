@@ -1,5 +1,7 @@
 # jahpodialmossar
 
-[x] - Backend
+- [x] - Backend
 
-[x] - Frontend
+- [x] - Frontend
+
+- [ ] - Deploy
